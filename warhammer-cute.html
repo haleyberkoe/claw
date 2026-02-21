@@ -15,7 +15,8 @@
             font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
             background: linear-gradient(180deg, #87CEEB 0%, #E0F6FF 30%, #FFB6C1 70%, #FFD6E7 100%);
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
             cursor: crosshair;
         }
 
@@ -59,6 +60,7 @@
             border: 4px solid #8B0000;
             transition: all 0.3s ease;
             min-width: 250px;
+            max-width: 300px;
         }
 
         .warhammer-card:hover {
@@ -70,6 +72,21 @@
             font-size: 100px;
             margin-bottom: 15px;
             animation: bounce 2s ease-in-out infinite;
+        }
+
+        .warhammer-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid #8B0000;
+            margin-bottom: 15px;
+            filter: saturate(1.2) brightness(1.1);
+            transition: filter 0.3s ease;
+        }
+
+        .warhammer-card:hover .warhammer-img {
+            filter: saturate(1.5) brightness(1.2) hue-rotate(-10deg);
         }
 
         .warhammer-message {
@@ -182,28 +199,28 @@
 
     <div class="warhammer-container">
         <div class="warhammer-card">
-            <div class="warhammer-emoji">👾</div>
-            <div class="warhammer-message">"I am a Space Marine! Pew pew!"</div>
+            <img src="https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?w=400&h=300&fit=crop" alt="Cute Space Marine" class="warhammer-img">
+            <div class="warhammer-message">"For the Emperor! 💕"</div>
         </div>
         <div class="warhammer-card">
-            <div class="warhammer-emoji" style="animation-delay: 0.3s;">🤖</div>
-            <div class="warhammer-message">"Exterminatus! But make it cute!"</div>
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop" alt="Cute Battle Cat" class="warhammer-img">
+            <div class="warhammer-message">"Exterminatus! But make it cute! 🌸"</div>
         </div>
         <div class="warhammer-card">
-            <div class="warhammer-emoji" style="animation-delay: 0.6s;">🦾</div>
-            <div class="warhammer-message">"I bring you gifts... of hugs!"</div>
+            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&h=300&fit=crop" alt="Cute Warrior Cat" class="warhammer-img">
+            <div class="warhammer-message">"I bring you hugs! 🤗"</div>
         </div>
         <div class="warhammer-card">
-            <div class="warhammer-emoji" style="animation-delay: 0.9s;">🧨</div>
-            <div class="warhammer-message">"Boom! But gently..."</div>
+            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&h=300&fit=crop" alt="Cute Ork Cat" class="warhammer-img">
+            <div class="warhammer-message">"WAAAGH! But nicely... 💝"</div>
         </div>
         <div class="warhammer-card">
-            <div class="warhammer-emoji" style="animation-delay: 1.2s;">🛡️</div>
-            <div class="warhammer-message">"Protecting you with love!"</div>
+            <img src="https://images.unsplash.com/photo-1495360019602-e05980bf549a?w=400&h=300&fit=crop" alt="Cute Guardian Cat" class="warhammer-img">
+            <div class="warhammer-message">"Protecting you with love! 🛡️"</div>
         </div>
         <div class="warhammer-card">
-            <div class="warhammer-emoji" style="animation-delay: 1.5s;">⚔️</div>
-            <div class="warhammer-message">"Cuteness conquers all!"</div>
+            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=400&h=300&fit=crop" alt="Cute Chaos Cat" class="warhammer-img">
+            <div class="warhammer-message">"Cuteness conquers all! ⚔️"</div>
         </div>
     </div>
 
