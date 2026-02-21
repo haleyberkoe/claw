@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haley's Kawaii Warhammer!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F6FF 30%, #FFB6C1 70%, #FFD6E7 100%);
+            min-height: 100vh;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+            border-bottom: 5px solid #FF69B4;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #8B0000;
+            text-shadow: 3px 3px 0 #FFB6C1, -1px -1px 0 #FFB6C1;
+            margin-bottom: 10px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+
+        .warhammer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .warhammer-card {
+            background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            text-align: center;
+            border: 4px solid #8B0000;
+            transition: all 0.3s ease;
+            min-width: 250px;
+        }
+
+        .warhammer-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.6);
+        }
+
+        .warhammer-emoji {
+            font-size: 100px;
+            margin-bottom: 15px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .warhammer-message {
+            font-size: 1.1rem;
+            color: #8B0000;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 15px;
+            border: 2px solid #8B0000;
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: float-heart 8s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float-heart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            font-size: 20px;
+            pointer-events: none;
+            animation: sparkle-fade 1s ease-out forwards;
+            z-index: 1000;
+        }
+
+        @keyframes sparkle-fade {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) rotate(360deg);
+            }
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+
+        .back-link a {
+            color: #8B0000;
+            text-decoration: none;
+            background: #FFB6C1;
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: 3px solid #FF69B4;
+            transition: all 0.3s ease;
+        }
+
+        .back-link a:hover {
+            background: #FF69B4;
+            color: #fff;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts-container">
+        <div class="heart" style="left: 5%; animation-delay: 0s;">💕</div>
+        <div class="heart" style="left: 15%; animation-delay: 1s;">💖</div>
+        <div class="heart" style="left: 25%; animation-delay: 2s;">💗</div>
+        <div class="heart" style="left: 35%; animation-delay: 0.5s;">💝</div>
+        <div class="heart" style="left: 45%; animation-delay: 3s;">💕</div>
+        <div class="heart" style="left: 55%; animation-delay: 1.5s;">💖</div>
+        <div class="heart" style="left: 65%; animation-delay: 2.5s;">💗</div>
+        <div class="heart" style="left: 75%; animation-delay: 0.8s;">💕</div>
+        <div class="heart" style="left: 85%; animation-delay: 4s;">💖</div>
+        <div class="heart" style="left: 95%; animation-delay: 1.2s;">💗</div>
+    </div>
+
+    <div class="header">
+        <h1>🐱 Haley's Kawaii Warhammer! 🐱</h1>
+        <p class="subtitle">Cute Warhammer units with a kawaii twist!</p>
+    </div>
+
+    <div class="warhammer-container">
+        <div class="warhammer-card">
+            <div class="warhammer-emoji">👾</div>
+            <div class="warhammer-message">"I am a Space Marine! Pew pew!"</div>
+        </div>
+        <div class="warhammer-card">
+            <div class="warhammer-emoji" style="animation-delay: 0.3s;">🤖</div>
+            <div class="warhammer-message">"Exterminatus! But make it cute!"</div>
+        </div>
+        <div class="warhammer-card">
+            <div class="warhammer-emoji" style="animation-delay: 0.6s;">🦾</div>
+            <div class="warhammer-message">"I bring you gifts... of hugs!"</div>
+        </div>
+        <div class="warhammer-card">
+            <div class="warhammer-emoji" style="animation-delay: 0.9s;">🧨</div>
+            <div class="warhammer-message">"Boom! But gently..."</div>
+        </div>
+        <div class="warhammer-card">
+            <div class="warhammer-emoji" style="animation-delay: 1.2s;">🛡️</div>
+            <div class="warhammer-message">"Protecting you with love!"</div>
+        </div>
+        <div class="warhammer-card">
+            <div class="warhammer-emoji" style="animation-delay: 1.5s;">⚔️</div>
+            <div class="warhammer-message">"Cuteness conquers all!"</div>
+        </div>
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">← Back to Haley's Kawaii World</a>
+    </div>
+
+    <script>
+        // Cursor sparkle effect
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.7) { // Only create sparkles 30% of the time
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = e.pageX + 'px';
+                sparkle.style.top = e.pageY + 'px';
+                sparkle.innerHTML = ['✨', '⭐', '💫', '🌟', '💖'][Math.floor(Math.random() * 5)];
+                sparkle.style.color = ['#ff69b4', '#ffd700', '#ff1493', '#ffb6c1'][Math.floor(Math.random() * 4)];
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
+        });
+
+        // Add more floating hearts periodically
+        setInterval(() => {
+            const heartsContainer = document.getElementById('hearts-container');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.animationDuration = (8 + Math.random() * 5) + 's';
+            heart.innerHTML = ['💕', '💖', '💗', '💝'][Math.floor(Math.random() * 4)];
+            heartsContainer.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 15000);
+        }, 3000);
+    </script>
+</body>
+</html>
